@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello World</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+<body>
+<h1>Users We have Available</h1>
+
+<span th:each="value:${users}">
+    <span th:text="${value.name} + ': ' + ${value.email} + ': ' + ${value.id}"></span>
+</span>
+
+<form th:action="@{/subscribe}" th:object="${user}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Email: <input type="text" th:field="*{email}" /></p>
+    <p>
+        <input type="submit" value="Subscribe" />
+        <input type="reset" value="Reset" />
+    </p>
+</form>
+
+<form th:action="@{/unsubscribe}" th:object="${user}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Email: <input type="text" th:field="*{email}" /></p>
+    <p>
+        <input type="submit" value="Unsubscribe">
+        <input type="reset" value="Reset" />
+    </p>
+</form>
+
+</body>
+</html>
