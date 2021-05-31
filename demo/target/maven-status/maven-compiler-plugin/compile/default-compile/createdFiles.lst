@@ -1,5 +1,0 @@
-com\example\demo\configuration\MyWebConfiguration.class
-com\example\demo\DemoApplication.class
-com\example\demo\models\User.class
-com\example\demo\repositories\UserRepository.class
-com\example\demo\controllers\ThymeUserController.class
